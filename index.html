@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,40 +12,80 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
-  <h5 class="text-center bg-warning">Student CRUD</h5>
-    <div class="section">
-    <div class="container-fluid">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <form id="form">
-              <div class="form-group">
-                <label for="fname">Enter first name : </label>
-                <input type="text" class="form-control" id="fname">
-              </div>
-              <div class="form-group">
-                <label for="lname">Enter first name : </label>
-                <input type="text" class="form-control" id="lname">
-              </div>
-              <div class="form-group">
-                <label for="email">Enter first name : </label>
-                <input type="text" class="form-control" id="email">
-              </div>
-              <div class="form-group">
-                <label for="contact">Enter first name : </label>
-                <input type="text" class="form-control" id="contact">
-              </div>
 
-              <button class="btn btn-block btn-sm btn-primary" id="addStudentBtn">Add student</button>
-            </form>
+<body>
+  <h4 class="text-center bg-warning">Student CRUD</h4>
+  <div class="section">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-4 mt-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <form id="form">
+                <div class="form-group">
+                  <label for="fname">Enter first name <span class="text-danger">*</span> </label>
+                  <input  required autocomplete="off" type="text" class="form-control" id="fname">
+                </div>
+                <div class="form-group">
+                  <label for="lname">Enter last name <span class="text-danger">*</span> </label>
+                  <input required  autocomplete="off" type="text" class="form-control" id="lname">
+                </div>
+                <div class="form-group">
+                  <label for="email">Enter email <span class="text-danger">*</span> </label>
+                  <input required  autocomplete="off" type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="contact">Enter contact number <span class="text-danger">*</span> </label>
+                  <input required  autocomplete="off" type="number" class="form-control" id="contact">
+                </div>
+
+                <button type="submit" class="btn btn-block btn-sm btn-primary" id="addStudentBtn">Add student</button>
+                <button type="button" class="btn btn-block btn-sm btn-primary d-none" id="updateStudentBtn">Update student</button>
+              </form>
+            </div>
           </div>
+        </div>
+
+        <div class="col-md-8 mt-4 ">
+
+          <div class="card">
+            <div class="card-body table-responsive">
+              <table class="table table-bordered table-hover ">
+                <thead class="bg-info">
+                  <tr>
+                    <th>Sr No</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+
+                <tbody id="tbody">
+                  <!-- <tr>
+                    <td>01</td>
+                    <td>john</td>
+                    <td>Doe</td>
+                    <td>john@gmal.com</td>
+                    <td>84958495</td>
+                    <td>editIcon</td>
+                    <td>deleteIcon</td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./assets/js/app.js"></script>
 </body>
+
 </html>
