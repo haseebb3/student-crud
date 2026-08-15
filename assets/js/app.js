@@ -126,6 +126,8 @@ function onUpdateHandler() {
   updateStudentBtn.classList.add("d-none");
   addStudentBtn.classList.remove("d-none");
 }
+
+
 //delete
 function onDeleteHandler(ele) {
   let delete_id = ele.dataset.deleteId;
@@ -140,6 +142,11 @@ function onDeleteHandler(ele) {
     timer: 2000,
   });
   }
+
+  let tds = document.querySelectorAll("#tbody tr td:first-child");
+  tds.forEach((el,idx) => el.innerText = idx + 1)
+  console.log(tds);
+  
 }
 
 form.addEventListener("submit", onFormSubmit);
